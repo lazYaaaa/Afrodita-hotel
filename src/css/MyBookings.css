@@ -1,0 +1,136 @@
+.my-bookings-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.loading, .error {
+    text-align: center;
+    margin: 2rem;
+    font-size: 1.2rem;
+}
+
+.error {
+    color: #e74c3c;
+}
+
+.bookings-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.booking-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.booking-info h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.booking-info p {
+    margin: 0.5rem 0;
+    color: #34495e;
+}
+
+/* src/components/MyBookings.css или ваш файл */
+
+/* Общие стили для кнопки */
+.cancel-btn {
+    background-color: #dc3545; /* Красный фон */
+    color: white; /* Белый текст */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease; /* Плавный переход при наведении */
+}
+
+/* Стили при наведении (hover) */
+.cancel-btn:hover {
+    background-color: #c82333; /* Темнее красный при наведении */
+}
+
+/* Стили при клике (active) */
+.cancel-btn:active {
+    background-color: #bd2130; /* Еще темнее при клике */
+}
+
+/* Стили для отключенной кнопки (disabled) */
+.cancel-btn:disabled {
+    background-color: #6c757d; /* Серый фон */
+    cursor: not-allowed; /* Курсор "нет" */
+    opacity: 0.6; /* Полупрозрачность */
+}
+.my-bookings h1 {
+    text-align: center; /* Выравнивание текста по центру */
+    margin-bottom: 20px; /* Добавьте отступ снизу, чтобы отделить от содержимого */
+    color: #333; /* Опционально: измените цвет текста */
+    font-size: 2em; /* Опционально: измените размер шрифта */
+}
+/* Стили для статусов бронирований */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: capitalize;
+    display: inline-block;
+    min-width: 100px;
+    text-align: center;
+}
+
+/* Подтверждено */
+.status-badge.confirmed {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+/* Отменено */
+.status-badge.cancelled {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+/* В ожидании */
+.status-badge.pending {
+    background-color: #fff3e0;
+    color: #e65100;
+    border: 1px solid #ffe0b2;
+}
+
+/* Завершено */
+.status-badge.completed {
+    background-color: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #bbdefb;
+}
+
+/* В обработке (если нужно) */
+.status-badge.processing {
+    background-color: #f3e5f5;
+    color: #7b1fa2;
+    border: 1px solid #e1bee7;
+}
+
+/* Анимация для изменения статуса */
+.status-badge {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .bookings-list {
+        grid-template-columns: 1fr;
+    }
+}

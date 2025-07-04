@@ -1,0 +1,89 @@
+.book-room {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .book-room h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  .book-room p {
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+  }
+  
+  .booking-form {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+  }
+  
+  .booking-form h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+  }
+  
+  .booking-form label {
+    display: block;
+    margin-bottom: 1rem;
+    color: #34495e;
+    font-weight: 500;
+  }
+  
+  .booking-form input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .booking-form button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .booking-form button[type="submit"]:hover {
+    background-color: #0773ba;
+  }
+  
+  .book-room  button[type='backButton'] {
+    background-color: #5d7882;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+  }
+  
+  .book-room button[type='backButton']:hover {
+    background-color: #7f8c8d;
+  }
+
+  .booked-date {
+    background-color: #ff4d4d !important; /* Красный фон */
+    color: white !important; /* Белый текст */
+    border-radius: 50%; /* Округлые даты */
+}
+.booked-two-days {
+  background-color: orange; /* другой цвет, например, красный */
+  color: white !important; /* Белый текст */
+    border-radius: 50%; 
+}

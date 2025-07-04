@@ -1,0 +1,127 @@
+/* styles.css */
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Центрирование по вертикали */
+    background-color: #e0f7fa; /* Фон страницы */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .auth-card {
+    width: 400px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .auth-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #00796b;
+    text-align: center;
+  }
+  
+  .auth-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .auth-label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+  
+  .auth-input {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.2em;
+    transition: border-color 0.2s;
+  }
+  
+  .auth-input:focus {
+    border-color: #00796b;
+    outline: none;
+  }
+  
+  .login-button {
+    padding: 15px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .login-button:hover {
+    background-color: #004d40;
+  }
+  
+  .registration-button {
+    padding: 15px;
+    background-color: #ef6c00;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .registration-button:hover {
+    background-color: #b24d00;
+  }
+
+  /* Стили для блока ошибок */
+.auth-error {
+  background-color: #f8d7da; /* Светло-красный фон */
+  color: #721c24; /* Темно-красный текст */
+  border: 1px solid #f5c6cb; /* Красная рамка */
+  padding: 10px;
+  margin-bottom: 15px; /* Отступ снизу, чтобы отделить от следующего элемента */
+  border-radius: 4px;
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-size: 0.9em; /* Немного уменьшенный размер шрифта */
+}
+
+/* Стили для параграфов внутри блока ошибок */
+.auth-error p {
+  margin: 0 0 5px 0; /* Отступ снизу между отдельными сообщениями */
+}
+
+/* Убираем отступ у последнего параграфа в блоке ошибок */
+.auth-error p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Стили для блока сообщения об успехе */
+.auth-success {
+  background-color: #d4edda; /* Светло-зеленый фон */
+  color: #155724; /* Темно-зеленый текст */
+  border: 1px solid #c3e6cb; /* Зеленая рамка */
+  padding: 10px;
+  margin-bottom: 15px; /* Отступ снизу */
+  border-radius: 4px;
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-size: 0.9em; /* Немного уменьшенный размер шрифта */
+}
+
+/* Стили для параграфа внутри блока сообщения об успехе */
+.auth-success p {
+  margin: 0; /* Убираем стандартный отступ параграфа */
+}

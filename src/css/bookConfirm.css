@@ -1,0 +1,75 @@
+/* Основной контейнер */
+.confirmation-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Заголовок */
+.confirmation-container h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+/* Детали бронирования */
+.confirmation-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #34495e;
+    margin: 0.8rem 0;
+    padding: 0.5rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Особое оформление номера бронирования */
+.confirmation-container p:first-of-type {
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 1.2rem;
+}
+
+/* Кнопка */
+.confirmation-container button {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 2rem auto 0;
+    padding: 12px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.confirmation-container button:hover {
+    background-color: #2980b9;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .confirmation-container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+    .confirmation-container h2 {
+        font-size: 1.5rem;
+    }
+    
+    .confirmation-container p {
+        font-size: 1rem;
+    }
+}

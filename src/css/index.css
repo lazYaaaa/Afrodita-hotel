@@ -1,0 +1,502 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+}
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 80%;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+.navbar h1 {
+  color: #f1356d;
+  font-size: 2em;
+  font-weight: bold;
+  transition: color 0.3s ease; 
+}
+
+.navbar h1:hover {
+  color: #c0113a; 
+}
+.navbar .links {
+  margin-left: auto;
+  display: flex; /* Добавляем flexbox для лучшего выравнивания кнопок в links */
+  align-items: center; /* Выравниваем элементы по центру по вертикали */
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #f1356d;
+}
+.content {
+  min-width: 70%;
+  max-width: 900px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 15px; /* Задайте желаемый отступ слева */
+  margin-right: auto;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+/* Общий стиль для блока обзора комнаты */
+/* Контейнер для всех блоков */
+.rooms-container {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: auto; /* делаем контейнер слева */
+}
+
+/* Блоки внутри контейнера */
+.room-preview {
+  width: 100%; /* внутри контейнера ширина 100%, чтобы занимать всю его ширину */
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Эффект при наведении */
+.room-preview:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Заголовок внутри блока */
+.room-preview h2 {
+  font-family: 'Montserrat', sans-serif; /* используем шрифт */
+  font-size: 24px;
+  color: #333; /* тёмный цвет текста */
+  margin-bottom: 10px;
+}
+.rooms-container h3 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c3e50; /* насыщенный темный цвет */
+  letter-spacing: 1px;
+  text-align: center; /* выравнивание по центру */
+  /* Можно добавить немного тени для глубины */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Абзац с ценой */
+.room-preview p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #555; /* чуть светлее для текста */
+  margin: 0;
+}
+.greeting {
+  width: 60%;
+  margin-left: 15px;
+  padding: 10px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-size: 1.2em;
+  color: #333;
+  /* Убеждаемся, что это блочный элемент, занимающий всю доступную ширину */
+  display: block; /* Обычно по умолчанию для div, но явно лучше */
+  width: 100%; /* Занимаем всю ширину родителя */
+  /* Дополнительно можно добавить box-sizing, если у вас есть глобальный сброс */
+  /* box-sizing: border-box; */ /* Если используется border-box, padding и border включаются в 100% */
+}
+
+/* Общий контейнер для кнопок, чтобы использовать flexbox для их расположения */
+.room-actions {
+  display: flex; /* Включаем flexbox */
+  justify-content: space-between; /* Распределяем элементы по краям контейнера */
+  align-items: center; /* Выравниваем по центру по вертикали */
+  margin-top: 15px; /* Добавляем отступ сверху, если нужно */
+  /* Добавьте overflow: hidden; к внешнему контейнеру room-item, если кнопки все равно вылезают за его пределы */
+  /* Но лучше сначала попробовать уменьшить кнопки */
+}
+
+.room-actions button {
+  /* Изменяем размер и округление */
+  padding: 10px 20px; /* Увеличиваем padding для кнопок в комнате */
+  border: none;
+  border-radius: 25px; /* Округляем углы (можно настроить значение) */
+  cursor: pointer;
+  font-size: 1em; /* Немного уменьшаем или оставляем 1em */
+  transition: background-color 0.3s ease, transform 0.1s ease; /* Добавляем transform для анимации нажатия */
+
+  /* РАЗРЕШАЕМ КНОПКАМ СЖИМАТЬСЯ */
+  flex-shrink: 1; /* Позволяет кнопке сжиматься, если места недостаточно */
+  flex-grow: 0; /* Запрещаем кнопкам растягиваться */
+
+  /* Добавьте box-sizing: border-box; для более предсказуемого поведения размеров */
+  box-sizing: border-box;
+
+  /* Добавляем небольшой отступ справа, чтобы гарантировать зазор между кнопками */
+  margin-right: 10px; /* Этот отступ будет работать вместе с justify-content: space-between */
+
+  /* Опционально: разрешить перенос текста, если он слишком длинный */
+  white-space: nowrap; /* Оставляем текст в одну строку по умолчанию */
+}
+
+/* Убираем margin-right у последней кнопки в .room-actions */
+.room-actions button:last-child {
+  margin-right: 0;
+}
+
+
+/* Стили для кнопки "Подробнее" */
+.details-button {
+  background-color: #6c757d; /* Серый цвет (Bootstrap secondary) */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-button:hover {
+  background-color: #545b62; /* Темнее серый при наведении */
+}
+
+/* Стили для кнопки "Забронировать" */
+.book-button {
+  background-color: #ffc107; /* Желтый цвет (Bootstrap warning) */
+  color: #212529; /* Темный текст для контраста */
+}
+
+.book-button:hover {
+  background-color: #e0a800; /* Темнее желтый при наведении */
+}
+
+/* Анимация нажатия для кнопок в .room-actions */
+.room-actions button:active {
+  transform: scale(0.98); /* Немного уменьшаем кнопку при нажатии */
+}
+
+
+/* Стиль для контейнера стрелки */
+.details-arrow {
+  margin-left: 8px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* Поворот стрелки при раскрытых подробностях */
+.details-button.expanded .details-arrow {
+  transform: rotate(180deg);
+}
+
+/* Общие стили для кнопок входа, регистрации, моих заявок и выхода */
+.links .nav-link,
+.links .logout-button,
+.links .login-link, /* Добавляем класс .login-link */
+.links .register-link { /* Добавляем класс .register-link */
+  text-decoration: none;
+  /* Увеличение размера */
+  padding: 0.8rem 1.5rem; /* Увеличиваем отступы */
+  border-radius: 4px;
+  font-size: 1.1rem; /* Увеличиваем размер шрифта */
+  /* Конец увеличения размера */
+  transition: all 0.3s ease; /* Плавный переход для всех свойств */
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  margin-right: 10px; /* Отступ между кнопками */
+  /* Добавляем box-sizing для предсказуемого размера */
+  box-sizing: border-box;
+}
+
+/* Стили для кнопки "Мои заявки" */
+.links .nav-link {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Стили для кнопки "Выход" */
+.links .logout-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Стили для кнопки "Вход" */
+.links .login-link {
+  background-color: #10e3b9; /* Цвет из вашего предыдущего стиля */
+  color: white;
+}
+
+/* Стили для кнопки "Регистрация" (если она есть) */
+.links .register-link {
+  background-color: #2ecc71; /* Пример зеленого цвета */
+  color: white;
+}
+
+
+/* Более выразительная анимация при наведении */
+.links .nav-link:hover,
+.links .logout-button:hover,
+.links .login-link:hover,
+.links .register-link:hover {
+  transform: translateY(-2px); /* Сдвиг вверх */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Более заметная тень */
+}
+
+/* Анимация при нажатии */
+.links .nav-link:active,
+.links .logout-button:active,
+.links .login-link:active,
+.links .register-link:active {
+  transform: translateY(0); /* Возвращение на исходное место */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2); /* Менее выраженная тень при нажатии */
+}
+/* Стили только для новых элементов детализации номера */
+.room-details {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eaeaea;
+}
+
+.details-section {
+  margin-bottom: 1.5rem;
+}
+
+.details-section h4 {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+/* Стили для списка удобств */
+.amenities-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.8rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.amenities-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.5;
+}
+
+.amenities-list li::before {
+  content: "•";
+  color: #3498db;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+/* Стили для характеристик с чекбоксами */
+.features-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.features-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.features-list input[type="checkbox"] {
+  margin-right: 0.6rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Стили для таблицы цен */
+.price-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1rem 0;
+}
+
+.price-table th {
+  background-color: #f8f9fa;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 500;
+}
+
+.price-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.price-table tr:last-child td {
+  border-bottom: none;
+}
+
+.price-table strong {
+  color: #2980b9;
+}
+
+/* Дополнительные текстовые стили */
+.details-section > p {
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+/* Новые стили только для добавленных элементов */
+.room-gallery-preview {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.room-thumbnail {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.more-photos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 70px;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.room-gallery-full {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.room-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.room-price-container {
+  margin: 8px 0 12px;
+  font-size: 1.1rem;
+}
+
+.room-price {
+  font-weight: bold;
+  color: #2a6496;
+}
+
+.price-description {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.room-capacity {
+  font-size: 0.9rem;
+  color: #666;
+  margin-left: 8px;
+}
+
+.room-rules {
+  margin-top: 12px;
+}
+
+.room-rules h5 {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.room-rules ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.room-rules li {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .links .nav-link,
+  .links .logout-button,
+  .links .login-link,
+  .links .register-link {
+      padding: 0.6rem 1rem; /* Немного уменьшаем на мобильных */
+      font-size: 1rem; /* Немного уменьшаем на мобильных */
+      margin-right: 8px; /* Уменьшаем отступ */
+  }
+  /* Убираем margin-right у последнего элемента в links на мобильных, если нужно */
+  .navbar .links > *:last-child {
+      margin-right: 0;
+  }
+}
+/* Добавьте эти стили в ваш файл CSS */
+.amenities-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.amenities-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.amenity-icon {
+  color: #3498db;
+  font-size: 1.2em;
+}
+
+.detail-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.detail-icon {
+  color: #3498db;
+  font-size: 1.2em;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+}
+
+.features-list li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.features-list input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #3498db;
+}

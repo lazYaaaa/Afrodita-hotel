@@ -1,0 +1,254 @@
+.admin-bookings-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.admin-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.admin-message {
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px;
+}
+
+.admin-message.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+.admin-message.loading {
+    background-color: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #90caf9;
+}
+
+.no-bookings {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+.bookings-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.booking-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.booking-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.booking-summary {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    cursor: pointer;
+    background-color: #f5f5f5;
+}
+
+.booking-id {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.booking-user {
+    grid-column: 2;
+    grid-row: 1;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.booking-room {
+    grid-column: 2;
+    grid-row: 2;
+    color: #666;
+}
+
+.booking-dates {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: right;
+}
+
+.booking-status {
+    grid-column: 3;
+    grid-row: 2;
+    text-align: right;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.booking-status.pending {
+    background-color: #fff3e0;
+    color: #e65100;
+}
+
+.booking-status.confirmed {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.booking-status.cancelled {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.delete-btn {
+    grid-column: 1 / span 3;
+    padding: 5px 10px;
+    background-color: #ef5350;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+.booking-details {
+    padding: 15px;
+    background-color: white;
+    border-top: 1px solid #eee;
+}
+
+.detail-row {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.detail-label {
+    font-weight: bold;
+    min-width: 100px;
+    color: #555;
+}
+
+.detail-row.message {
+    display: block;
+}
+
+.detail-row.message p {
+    margin: 5px 0 0 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    border-left: 3px solid #2c3e50;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.status-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.status-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.status-btn.confirm {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-btn.confirm:hover, .status-btn.confirm.active {
+    background-color: #c8e6c9;
+}
+
+.status-btn.reject {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.status-btn.reject:hover, .status-btn.reject.active {
+    background-color: #ffcdd2;
+}
+
+.delete-btn {
+    padding: 8px 15px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+/* Добавляем новые стили */
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.total-revenue {
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #e3f2fd;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.total-revenue span {
+    color: #1976d2;
+}
+
+.booking-total {
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.nights-count {
+    font-size: 0.8em;
+    color: #666;
+    margin-left: 5px;
+}
+

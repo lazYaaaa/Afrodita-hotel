@@ -1,0 +1,26 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "PG local",
+            "database": "postgres",
+            "username": "postgres",
+            "password": "postgres",
+            "connectionTimeout": 30
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Afrodita local",
+            "database": "afrodita",
+            "username": "postgres",
+            "password": "postgres",
+            "connectionTimeout": 30
+        }
+    ]
+}
